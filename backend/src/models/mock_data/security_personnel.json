@@ -1,0 +1,11 @@
+[
+    {
+      "id": 1,
+      "userId": 2,
+      "dateOfBirth": "1990-01-01",
+      "phoneNumber": "555-123-4567",
+      "address": "123 Main St, Anytown, USA",
+      "assignedLocation": 1
+    }
+  ]
+  
