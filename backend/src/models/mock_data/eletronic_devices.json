@@ -1,0 +1,72 @@
+[
+  {
+    "id": "1",
+    "name": "Smart Camera A1",
+    "serial": 123456,
+    "macAddress": "AA:BB:CC:11:22:33",
+    "type": "camera"
+  },
+  {
+    "id": "2",
+    "name": "Temperature Sensor T1",
+    "serial": 789012,
+    "macAddress": "DD:EE:FF:44:55:66",
+    "type": "sensor"
+  },
+  {
+    "id": "3",
+    "name": "Motion Sensor M1",
+    "serial": 345678,
+    "macAddress": "11:22:33:AA:BB:CC",
+    "type": "sensor"
+  },
+  {
+    "id": "4",
+    "name": "Smart Remote R1",
+    "serial": 901234,
+    "macAddress": "44:55:66:DD:EE:FF",
+    "type": "remote_control"
+  },
+  {
+    "id": "5",
+    "name": "Smart Camera A2",
+    "serial": 567890,
+    "macAddress": "AA:BB:CC:11:22:99",
+    "type": "camera"
+  },
+  {
+    "id": "6",
+    "name": "Temperature Sensor T2",
+    "serial": 234567,
+    "macAddress": "DD:EE:FF:44:88:66",
+    "type": "sensor"
+  },
+  {
+    "id": "7",
+    "name": "Motion Sensor M2",
+    "serial": 891011,
+    "macAddress": "11:99:33:AA:BB:CC",
+    "type": "sensor"
+  },
+  {
+    "id": "8",
+    "name": "Smart Remote R2",
+    "serial": 567123,
+    "macAddress": "44:55:11:DD:EE:FF",
+    "type": "remote_control"
+  },
+  {
+    "id": "9",
+    "name": "Smart Camera A3",
+    "serial": 765432,
+    "macAddress": "AA:33:CC:11:22:33",
+    "type": "camera"
+  },
+  {
+    "id": "10",
+    "name": "Temperature Sensor T3",
+    "serial": 678901,
+    "macAddress": "DD:77:FF:44:55:66",
+    "type": "sensor"
+  }
+]
