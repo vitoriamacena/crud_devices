@@ -5,6 +5,6 @@ export const router = Router();
 
 router.post('/', deviceController.createDevice);
 router.get('/', deviceController.getAllDevices);
-router.get('/device/:id', deviceController.getDeviceById);
-router.put('/device/:id', deviceController.updateDevice);
-router.delete('/device/:id', deviceController.deleteDevice);
+router.get('/:id', deviceController.getDeviceById);
+router.put('/:id', deviceController.updateDevice);
+router.delete('/:id', deviceController.deleteDevice);
