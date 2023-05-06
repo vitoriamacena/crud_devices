@@ -1,9 +1,9 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import DeviceList from './pages/DeviceList';
-import DeviceDetails from './pages/DeviceDetails';
-import CreateDevice from './pages/CreateDevice';
-import EditDevide from './pages/EditDevide';
+import DeviceList from '../pages/DeviceList/DeviceList';
+import DeviceDetails from '../pages/DeviceDetails/DeviceDetails';
+import CreateDevice from '../pages/CreateDevice/CreateDevice';
+import EditDevide from '../pages/EditDevice/EditDevide';
 
 const AppRoutes = () => {
   return (
