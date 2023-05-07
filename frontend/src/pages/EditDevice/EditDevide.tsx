@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import DeviceForm from "../../components/DeviceForm";
+import DeviceForm from "../../components/DeviceForm/DeviceForm";
 import styles from "../../styles/FormPage.module.css";
-import global from "../../global.module.css";
+import global from "../../styles/global.module.css";
 import { useParams } from "react-router-dom";
 import { ElectronicDevice } from "../../types/EletronicDevice";
 import { useEffect, useState } from "react";
@@ -9,9 +9,7 @@ import { fetchDeviceById } from "../../services/api";
 
 const EditDevide = () => {
   const { id = "" } = useParams<{ id: string }>();
-  const [selectedDevice, setSelectedDevice] = useState<ElectronicDevice | null>(
-    null
-  );
+  const [selectedDevice, setSelectedDevice] = useState<ElectronicDevice | null>(null);
 
   useEffect(() => {
     const handleFetchDeviceById = async () => {

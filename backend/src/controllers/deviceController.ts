@@ -8,7 +8,7 @@ export const createDevice = async (req: Request, res: Response) => {
     const createdDevice = await deviceService.createDevice(newDevice);
     res.status(201).json(createdDevice);
   } catch (error) {
-    res.status(400).json({ message: 'Erro ao criar dispositivo', error });
+    res.status(400).json({ message: 'Erro ao criar dispositivo.', error });
   }
 };
 
@@ -17,7 +17,7 @@ export const getAllDevices = async (req: Request, res: Response) => {
     const allDevices = await deviceService.getAllDevices();
     res.status(200).json(allDevices);
   } catch (error) {
-    res.status(500).json({ message: 'Erro ao buscar todos os dispositivos', error });
+    res.status(500).json({ message: 'Erro ao buscar dispositivos.', error });
   }
 };
 
@@ -29,10 +29,10 @@ export const getDeviceById = async (req: Request, res: Response) => {
     if (device) {
       res.status(200).json(device);
     } else {
-      res.status(404).json({ message: 'Dispositivo nao encontrado' });
+      res.status(404).json({ message: 'Dispositivo não encontrado.' });
     }
   } catch (error) {
-    res.status(500).json({ message: 'Erro ao buscar dispositivo por ID', error });
+    res.status(500).json({ message: 'Erro ao buscar dispositivo.', error });
   }
 };
 
@@ -45,10 +45,10 @@ export const updateDevice = async (req: Request, res: Response) => {
     if (updated) {
       res.status(200).json(updated);
     } else {
-      res.status(404).json({ message: 'Dispositivo nao encontrado' });
+      res.status(404).json({ message: 'Dispositivo não encontrado.' });
     }
   } catch (error) {
-    res.status(500).json({ message: 'Erro ao atualizar dispositivo', error });
+    res.status(500).json({ message: 'Erro ao atualizar dispositivo.', error });
   }
 };
 
@@ -60,10 +60,10 @@ export const deleteDevice = async (req: Request, res: Response) => {
     if (deleted) {
       res.status(200).json({ message: 'Dispositivo deletado.' });
     } else {
-      res.status(404).json({ message: 'Dispositivo nao encontrado' });
+      res.status(404).json({ message: 'Dispositivo não encontrado.' });
     }
   } catch (error) {
-    res.status(500).json({ message: 'Erro ao deletar dispositivo', error });
+    res.status(500).json({ message: 'Erro ao deletar dispositivo.', error });
  
   }
 };

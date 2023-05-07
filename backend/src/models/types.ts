@@ -5,3 +5,5 @@ export interface ElectronicDevice {
   macAddress: string;
   type: string;
 };
+
+export type NewElectronicDevice = Omit<ElectronicDevice, 'id'>;

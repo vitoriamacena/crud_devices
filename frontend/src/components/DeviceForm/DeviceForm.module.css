@@ -20,6 +20,11 @@
     margin-bottom: 1rem;
     flex-basis: 45%;
   }
+
+  .helperText {
+    font-size: .875rem;
+    margin-top: 0.35rem;
+  }
   
   .label {
     display: flex;
@@ -37,8 +42,6 @@
   
   .error {
     color: #f44336;
-    font-size: 0.875rem;
-    margin-top: 0.25rem;
   }
   
   .buttonWrapper {

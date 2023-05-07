@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import global from "../../global.module.css";
+import global from "../../styles/global.module.css";
 import { fetchDevices, deleteDevice } from "../../services/api";
 import { useEffect, useState } from "react";
 import { ElectronicDevice } from "../../types/EletronicDevice";

@@ -1,8 +1,8 @@
-import { ElectronicDevice } from '../models/types';
+import { ElectronicDevice, NewElectronicDevice } from '../models/types';
 import devices from '../models/mock_data/eletronic_devices.json';
 import { v4 as uuidv4 } from 'uuid';
 
-export const createDevice = async (device: ElectronicDevice): Promise<ElectronicDevice> => {
+export const createDevice = async (device: NewElectronicDevice): Promise<ElectronicDevice> => {
   const newId = uuidv4();
   const newDevice = { ...device, id: newId };
   devices.push(newDevice);

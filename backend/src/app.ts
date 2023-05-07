@@ -4,21 +4,18 @@ import { router as deviceRoutes } from "./routes/device.routes";
 
 const app: Application = express();
 
-app.use(cors());
+app.use(cors({
+  origin: '*',
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+}));
 app.use(express.json());
 
 app.use("/devices", deviceRoutes);
 
-app.use((req: Request, res: Response, next: NextFunction): void => {
-  if (req.path === "/") {
-    res.json({ message: "welcome" });
-  } else {
-    next();
-  }
-});
+const PORT = 5050;
 
-app.use((error: Error, req: Request, res: Response, next: NextFunction) => {
-  res.status(500).json({ message: error.message });
+app.listen(process.env.PORT || PORT, () => {
+    console.log('server is running');
 });
 
 export default app;

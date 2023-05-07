@@ -3,10 +3,11 @@ import * as Yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import styles from "../styles/DeviceForm.module.css";
-import global from "../global.module.css";
-import { ElectronicDevice } from "../types/EletronicDevice";
-import { createDevice, editDevice } from "../services/api";
+import styles from "./DeviceForm.module.css";
+import global from "../../styles/global.module.css";
+import { DeviceType, ElectronicDevice } from "../../types/EletronicDevice";
+import { createDevice, editDevice } from "../../services/api";
+import { useMacAddressInput } from "../../hooks/useMacAdressInput";
 
 type Props = {
   isEdit?: boolean;
@@ -16,15 +17,17 @@ type Props = {
 
 function DeviceForm({ isEdit = false, selectedDevice, submitRef }: Props) {
   const navigate = useNavigate();
+  const macAddressInput = useMacAddressInput("");
 
   const newDeviceSchema = Yup.object().shape({
     name: Yup.string().required("Nome é obrigatório"),
     serial: Yup.number()
-      .typeError("Serial deve ser um número")
       .required("Serial é obrigatório")
-      .min(1, "Serial deve ser maior que 0"),
+      .typeError("Serial deve ser um número"),
     macAddress: Yup.string().required("MAC Address é obrigatório"),
-    type: Yup.string().required("Tipo é obrigatório"),
+    type: Yup.string()
+    .oneOf(Object.values(DeviceType), "Tipo inválido")
+    .required("Tipo é obrigatório"),
   });
 
   const defaultValues = useMemo(
@@ -32,7 +35,7 @@ function DeviceForm({ isEdit = false, selectedDevice, submitRef }: Props) {
       name: selectedDevice?.name || "",
       serial: selectedDevice?.serial || undefined,
       macAddress: selectedDevice?.macAddress || "",
-      type: selectedDevice?.type || "",
+      type: selectedDevice?.type || undefined,
     }),
     [selectedDevice]
   );
@@ -74,7 +77,9 @@ function DeviceForm({ isEdit = false, selectedDevice, submitRef }: Props) {
         }
       }
     } catch (err) {
-      alert("Erro ao criar dispositivo.");
+      alert(
+        isEdit ? "Erro ao editar dispositivo." : "Erro ao criar dispositivo."
+      );
     }
   };
 
@@ -89,7 +94,11 @@ function DeviceForm({ isEdit = false, selectedDevice, submitRef }: Props) {
             Nome
           </label>
           <input {...register("name")} id="name" className={styles.input} />
-          {errors.name && <p className={styles.error}>{errors.name.message}</p>}
+          {errors.name && (
+            <span className={`${styles.error} ${styles.helperText}`}>
+              {errors.name.message}
+            </span>
+          )}
         </div>
 
         <div className={styles.group}>
@@ -97,8 +106,13 @@ function DeviceForm({ isEdit = false, selectedDevice, submitRef }: Props) {
             Serial
           </label>
           <input {...register("serial")} id="serial" className={styles.input} />
-          {errors.serial && (
-            <p className={styles.error}>{errors.serial.message}</p>
+
+          {errors.serial ? (
+            <span className={`${styles.error} ${styles.helperText}`}>
+              {errors.serial.message}
+            </span>
+          ) : (
+            <span className={styles.helperText}>Somente números *</span>
           )}
         </div>
       </div>
@@ -110,11 +124,14 @@ function DeviceForm({ isEdit = false, selectedDevice, submitRef }: Props) {
           </label>
           <input
             {...register("macAddress")}
+            {...macAddressInput}
             id="macAddress"
             className={styles.input}
           />
           {errors.macAddress && (
-            <p className={styles.error}>{errors.macAddress.message}</p>
+            <span className={`${styles.error} ${styles.helperText}`}>
+              {errors.macAddress.message}
+            </span>
           )}
         </div>
 
@@ -124,11 +141,15 @@ function DeviceForm({ isEdit = false, selectedDevice, submitRef }: Props) {
           </label>
           <select className={styles.input} {...register("type")} id="type">
             <option />
-            <option value="camera">Câmera</option>
-            <option value="sensor">Sensor</option>
-            <option value="remote_control">Controle Remoto</option>
+            <option value="Câmera">Câmera</option>
+            <option value="Sensor">Sensor</option>
+            <option value="Controle Remoto">Controle Remoto</option>
           </select>
-          {errors.type && <p className={styles.error}>{errors.type.message}</p>}
+          {errors.type && (
+            <span className={`${styles.error} ${styles.helperText}`}>
+              {errors.type.message}
+            </span>
+          )}
         </div>
       </div>
 

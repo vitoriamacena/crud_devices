@@ -17,11 +17,11 @@ export const fetchDevices = () => {
   };
   
   export const createDevice = (data: ElectronicDevice) => {
-    return api.post('/devices', data);
+    return api.post('/devices/add', data);
   };
   
   export const editDevice = (id: string, data: ElectronicDevice) => {
-    return api.put(`/devices/${id}`, data);
+    return api.put(`/devices/edit/${id}`, data);
   };
   
   export const deleteDevice = (id: string) => {

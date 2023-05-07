@@ -1,5 +1,5 @@
-import DeviceForm from "../../components/DeviceForm";
-import global from '../../global.module.css'
+import DeviceForm from "../../components/DeviceForm/DeviceForm";
+import global from '../../styles/global.module.css'
 import styles from "../../styles/FormPage.module.css"
 import { Link } from "react-router-dom";
 
