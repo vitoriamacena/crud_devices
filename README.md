@@ -1,6 +1,6 @@
 # CRUD - Dipositivos eletrônicos
 
-### Projeto desenvolvido como parte de um teste técnico. O desafio consiste em criar uma aplicação para cadastrar, consultar, listar e excluir dispositivos eletrônicos, utilizando React, Typescript e Express.
+#### Projeto desenvolvido como parte de um teste técnico. O desafio consiste em criar uma aplicação para cadastrar, consultar, listar e excluir dispositivos eletrônicos, utilizando React, Typescript e Express.
 
 ## Instalação
 
