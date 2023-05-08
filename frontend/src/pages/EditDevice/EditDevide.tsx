@@ -30,7 +30,7 @@ const EditDevide = () => {
         <Link to="/">
           <button className={global.button}>Voltar</button>
         </Link>
-        <h2>Editar dispositivo - {selectedDevice?.name}</h2>
+        <h2>Editar dispositivo - {selectedDevice?.id}</h2>
       </div>
 
       <DeviceForm selectedDevice={selectedDevice} isEdit={true} />
