@@ -51,43 +51,6 @@
     padding-bottom: 12px;
     padding: 20px;
   }
-
-.editButton,
-.deleteButton {
-  color: #4b4d4f;
-  padding: 3px 16px;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 14px;
-  margin: 5px;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
-
-}
-
-.editButton {
-  border: 1px solid #0056b3;
-  background-color: transparent;
-  color: #0056b3;
-}
-
-.editButton:hover {
-background-color: #0056b3;
-  border: 1px solid #0056b3;
-  color: #e7e9eb;
-}
-
-.deleteButton {
-  border: 1px solid #dc3545;
-  background-color: transparent;
-  color: #dc3545;
-}
-
-.deleteButton:hover {
-  color: #e7e9eb;
-  background-color: #c82333;
-}
   
   @media (max-width: 768px) {
     .tableContainer {

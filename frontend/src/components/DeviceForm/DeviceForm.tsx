@@ -5,9 +5,9 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import styles from "./DeviceForm.module.css";
 import global from "../../styles/global.module.css";
-import { DeviceType, ElectronicDevice } from "../../types/EletronicDevice";
+import { ElectronicDevice } from "../../types/EletronicDevice";
 import { createDevice, editDevice } from "../../services/api";
-import { useMacAddressInput } from "../../hooks/useMacAdressInput";
+import { useMacAddressInput } from "../../hooks/useMacAddressInput";
 
 type Props = {
   isEdit?: boolean;
@@ -26,7 +26,6 @@ function DeviceForm({ isEdit = false, selectedDevice, submitRef }: Props) {
       .typeError("Serial deve ser um número"),
     macAddress: Yup.string().required("MAC Address é obrigatório"),
     type: Yup.string()
-    .oneOf(Object.values(DeviceType), "Tipo inválido")
     .required("Tipo é obrigatório"),
   });
 

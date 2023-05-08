@@ -4,6 +4,7 @@ import { fetchDevices, deleteDevice } from "../../services/api";
 import { useEffect, useState } from "react";
 import { ElectronicDevice } from "../../types/EletronicDevice";
 import styles from "./DeviceList.module.css";
+import DeviceDetails from "../../components/DeviceDetails/DeviceDetails";
 
 function DeviceList() {
   const [devices, setDevices] = useState<ElectronicDevice[]>([]);
@@ -52,31 +53,11 @@ function DeviceList() {
           </thead>
           <tbody>
             {devices.map((device) => (
-              <tr key={device.id}>
-                <td>{device.name}</td>
-                <td>{device.serial}</td>
-                <td>{device.macAddress}</td>
-                <td>{device.type}</td>
-                <td>
-                  <Link to={`/edit/${device.id}`}>
-                    <button className={styles.editButton}>Editar</button>{" "}
-                  </Link>
-                </td>
-                <td>
-                  <button
-                    onClick={() => {
-                      if (device.id) {
-                        handleDeleteDevice(device.id);
-                      } else {
-                        console.error("Device ID is undefined");
-                      }
-                    }}
-                    className={styles.deleteButton}
-                  >
-                    Excluir
-                  </button>
-                </td>
-              </tr>
+              <DeviceDetails
+                handleDeleteDevice={handleDeleteDevice}
+                key={device.id}
+                device={device}
+              />
             ))}
           </tbody>
         </table>
