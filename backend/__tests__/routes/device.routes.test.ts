@@ -10,7 +10,7 @@ const testDevice: NewElectronicDevice = {
   name: "Camera inteligente",
   serial: 123456,
   macAddress: "AA:BB:CC:11:22:33",
-  type: "camera",
+  type: "Câmera",
 };
 
 beforeEach(() => {

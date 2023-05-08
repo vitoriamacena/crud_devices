@@ -14,8 +14,12 @@ app.use("/devices", deviceRoutes);
 
 const PORT = 5050;
 
-app.listen(process.env.PORT || PORT, () => {
-    console.log('server is running');
+if (process.env.NODE_ENV !== 'test') {
+  app.listen(process.env.PORT || PORT, () => {
+    console.log(`server is running on port ${PORT}`);
 });
+}
+
+
 
 export default app;
