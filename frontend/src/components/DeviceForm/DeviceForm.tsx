@@ -12,10 +12,9 @@ import { useMacAddressInput } from "../../hooks/useMacAddressInput";
 type Props = {
   isEdit?: boolean;
   selectedDevice?: ElectronicDevice | null;
-  submitRef?: React.MutableRefObject<HTMLButtonElement | null>;
 };
 
-function DeviceForm({ isEdit = false, selectedDevice, submitRef }: Props) {
+function DeviceForm({ isEdit = false, selectedDevice }: Props) {
   const navigate = useNavigate();
   const macAddressInput = useMacAddressInput("");
 
