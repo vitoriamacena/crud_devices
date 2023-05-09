@@ -21,7 +21,7 @@ Certifique-se de ter instalado no seu sistema:
 
 1. Inicie o servidor de desenvolvimento utilizando o comando `npm run dev`.
 
-O servidor estará disponível em `http://localhost:5050`.
+O servidor estará disponível em [http://localhost:3000](http://localhost:3000).
 
 ## Testes
 
@@ -50,7 +50,7 @@ O servidor estará disponível em `http://localhost:5050`.
 
 1. Inicie o servidor de desenvolvimento utilizando o comando `npm start`.
 
-O aplicativo estará disponível em `http://localhost:3000`.
+O aplicativo estará disponível em [http://localhost:3000](http://localhost:3000).
 
 ## Testes
 
