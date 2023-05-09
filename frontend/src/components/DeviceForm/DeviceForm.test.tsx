@@ -1,8 +1,4 @@
-import {
-  render,
-  screen,
-  waitFor,
-} from "@testing-library/react";
+import { render, screen, waitFor } from "@testing-library/react";
 import DeviceForm from "./DeviceForm";
 import * as api from "../../services/api";
 import userEvent from "@testing-library/user-event";

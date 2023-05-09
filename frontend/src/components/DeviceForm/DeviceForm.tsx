@@ -7,7 +7,7 @@ import styles from "./DeviceForm.module.css";
 import global from "../../styles/global.module.css";
 import { ElectronicDevice } from "../../types/EletronicDevice";
 import { createDevice, editDevice } from "../../services/api";
-import { useMacAddressInput } from "../../hooks/useMacAddressInput";
+import { useMacAddressInput } from "../../hooks/useMacAddressInput"; 
 
 type Props = {
   isEdit?: boolean;

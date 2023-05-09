@@ -27,6 +27,7 @@ function DeviceDetails({ device, handleDeleteDevice }: DeviceDetailsProps) {
               console.error("Device ID is undefined");
             }
           }}
+          data-testid={`delete-button-${device.id}`}
           className={styles.deleteButton}
         >
           Excluir
